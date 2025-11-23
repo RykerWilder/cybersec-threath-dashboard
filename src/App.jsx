@@ -4,12 +4,13 @@ import { ReactSortable } from "react-sortablejs";
 import Header from './components/Header';
 import AttacksTypes from './components/AttacksTypes';
 import Malware from './components/Malware';
+import Threats from './components/Threats';
 
 function App() {
   const [items, setItems] = useState([
     { id: 1, component: 'attacks' },
     { id: 2, component: 'malware' },
-    { id: 3, component: 'chart2' },
+    { id: 3, component: 'threats' },
     { id: 4, component: 'chart3' }
   ]);
 
@@ -19,12 +20,8 @@ function App() {
         return <AttacksTypes key={item.id} />;
       case 'malware':
           return <Malware key={item.id} />;
-      case 'chart2':
-        return (
-          <div key={item.id} className="break-inside-avoid border border-stone-500 rounded-lg p-4 bg-slate-700">
-            <canvas className="h-72"></canvas>
-          </div>
-        );
+      case 'threats':
+          return <Threats key={item.id} />;
       case 'chart3':
         return (
           <div key={item.id} className="break-inside-avoid border border-stone-500 rounded-lg p-4 bg-slate-700">
