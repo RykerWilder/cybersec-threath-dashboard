@@ -5,13 +5,14 @@ import Header from './components/Header';
 import AttacksTypes from './components/AttacksTypes';
 import Malware from './components/Malware';
 import Threats from './components/Threats';
+import Trends from './components/Trends';
 
 function App() {
   const [items, setItems] = useState([
     { id: 1, component: 'attacks' },
     { id: 2, component: 'malware' },
     { id: 3, component: 'threats' },
-    { id: 4, component: 'chart3' }
+    { id: 4, component: 'trends' }
   ]);
 
   const renderComponent = (item) => {
@@ -22,12 +23,8 @@ function App() {
         return <Malware />;
       case 'threats':
         return <Threats />;
-      case 'chart3':
-        return (
-          <div className="border border-stone-500 rounded-lg p-4 bg-slate-700">
-            <canvas className="h-96"></canvas>
-          </div>
-        );
+      case 'trends':
+        return <Trends />;
       default:
         return null;
     }
