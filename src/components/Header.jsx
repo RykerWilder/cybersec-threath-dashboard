@@ -44,7 +44,7 @@ const Header = () => {
           <span>Active</span>
         </div>
         <div>
-          <span className="font-bold text-3xl text-white" id="clock">
+          <span className="font-bold text-3xl text-slate-800" id="clock">
             {currentTime}
           </span>
         </div>
