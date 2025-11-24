@@ -35,6 +35,8 @@ const TopVulnerabilitiesList = () => {
         );
 
         const vulnerabilitiesData = response.data.vulnerabilities || [];
+        console.log(vulnerabilitiesData);
+        
         setVulnerabilities(vulnerabilitiesData);
       } catch (err) {
         console.error("Errore nel fetch dei dati:", err);
@@ -89,9 +91,10 @@ const TopVulnerabilitiesList = () => {
                   <div className="w-3 h-3 rounded-full bg-violet-400 mt-1.5"></div>
                   <div className="flex-1">
                     {/* Titolo CVE */}
-                    <div className="font-mono text-sm text-slate-200 font-semibold">
+                    <a href={`https://nvd.nist.gov/vuln/detail/${vulnerability.cve.id}`} className="
+                    underline text-sm text-slate-200 font-semibold" target="_blank" rel="noopener noreferrer">
                       {vulnerability.cve.id}
-                    </div>
+                    </a>
                     {/* Descrizione */}
                     <div className="text-xs text-slate-400 mt-2 line-clamp-3">
                       {vulnerability.cve.descriptions?.[0]?.value ||
