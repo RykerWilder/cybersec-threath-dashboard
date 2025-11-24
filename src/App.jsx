@@ -6,6 +6,7 @@ import PopularThreats from './components/PopularThreats';
 import NVDVulnerabilitySeverity from './components/NVDVulnerabilitySeverity';
 import Threats from './components/Threats';
 import Trends from './components/Trends';
+import Footer from './components/Footer';
 
 function App() {
   const [items, setItems] = useState([
@@ -49,6 +50,7 @@ function App() {
           ))}
         </ReactSortable>
       </div>
+      <Footer />
     </div>
   );
 }
