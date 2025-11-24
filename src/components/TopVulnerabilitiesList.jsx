@@ -71,11 +71,11 @@ const TopVulnerabilitiesList = () => {
   }
 
   return (
-    <div className="break-inside-avoid border border-stone-500 rounded-lg p-4 bg-slate-700 ">
+    <div className="break-inside-avoid border border-stone-500 rounded-lg p-4 bg-slate-700">
       <h3 className="text-xl text-slate-400 font-semibold text-center mb-4">
         NVD Latest Vulnerabilities Explanation
       </h3>
-      <div className="space-y-3 max-h-90 overflow-y-auto relative">
+      <div className="space-y-3 h-full overflow-y-auto">
         {vulnerabilities.length === 0 ? (
           <div className="text-slate-400 text-center py-4">
             No vulnerabilities found in the last 7 days
