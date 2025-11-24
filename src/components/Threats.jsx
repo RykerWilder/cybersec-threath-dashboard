@@ -101,7 +101,7 @@ const RadarChart = () => {
 
   return (
     <div className="break-inside-avoid border border-stone-500 rounded-lg p-4 bg-slate-700">
-      <canvas ref={chartRef} className="h-64"></canvas>
+      <canvas ref={chartRef} className="h-100"></canvas>
     </div>
   );
 };
