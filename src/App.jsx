@@ -2,25 +2,25 @@ import './App.css';
 import { useState } from 'react';
 import { ReactSortable } from "react-sortablejs";
 import Header from './components/Header';
-import AttacksTypes from './components/AttacksTypes';
-import Malware from './components/Malware';
+import PopularThreats from './components/PopularThreats';
+import NVDVulnerabilitySeverity from './components/NVDVulnerabilitySeverity';
 import Threats from './components/Threats';
 import Trends from './components/Trends';
 
 function App() {
   const [items, setItems] = useState([
-    { id: 1, component: 'attacks' },
-    { id: 2, component: 'malware' },
+    { id: 1, component: 'PopularThreats' },
+    { id: 2, component: 'NVDVulnerabilitySeverity' },
     { id: 3, component: 'threats' },
     { id: 4, component: 'trends' }
   ]);
 
   const renderComponent = (item) => {
     switch(item.component) {
-      case 'attacks':
-        return <AttacksTypes />;
-      case 'malware':
-        return <Malware />;
+      case 'PopularThreats':
+        return <PopularThreats />;
+      case 'NVDVulnerabilitySeverity':
+        return <NVDVulnerabilitySeverity />;
       case 'threats':
         return <Threats />;
       case 'trends':

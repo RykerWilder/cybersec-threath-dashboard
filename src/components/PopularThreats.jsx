@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import * as Chart from "chart.js";
 import axios from "axios";
 
-const AttacksTypes = () => {
+const PopularThreats = () => {
   const chartRef = useRef(null);
   const chartInstanceRef = useRef(null);
   const [chartData, setChartData] = useState(null);
@@ -129,7 +129,7 @@ const AttacksTypes = () => {
   if (loading) {
     return (
       <div className="break-inside-avoid border border-stone-500 rounded-lg p-4 bg-slate-700 flex items-center justify-center">
-        <div className="text-slate-300">Loading data...</div>
+        <div className="text-slate-300">Loading Virus Total data...</div>
       </div>
     );
   }
@@ -149,4 +149,4 @@ const AttacksTypes = () => {
   );
 };
 
-export default AttacksTypes;
+export default PopularThreats;
