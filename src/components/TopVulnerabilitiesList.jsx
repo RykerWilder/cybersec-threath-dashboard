@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const ThreatsList = () => {
+const TopVulnerabilitiesList = () => {
   const [vulnerabilities, setVulnerabilities] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -57,7 +57,7 @@ const ThreatsList = () => {
   return (
     <div className="break-inside-avoid border border-stone-500 rounded-lg p-4 bg-slate-700 ">
       <h3 className="text-xl text-slate-400 font-semibold text-center mb-4">
-        Threats List Explanation
+        Top Vulnerabilities List
       </h3>
       
       <div className="space-y-3 max-h-90 overflow-y-auto relative">
@@ -99,4 +99,4 @@ const ThreatsList = () => {
   );
 };
 
-export default ThreatsList;
+export default TopVulnerabilitiesList;
