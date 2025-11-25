@@ -43,26 +43,16 @@ const PopularThreats = () => {
         });
 
         const backgroundColors = [
-          "#00f5ff", // ciano neon brillante
-          "#ff0055", // rosso critico intenso
-          "#ff6600", // arancione alert
-          "#ffaa00", // ambra warning
-          "#0066ff", // blu elettrico
-          "#5555ff", // blu violaceo tech
-          "#9945ff", // viola neon
-          "#00ff88", // verde matrix
+          "#c084fc",
+          "#a855f7",
+          "#9333ea",
+          "#7c3aed",
+          "#6d28d9",
+          "#5b21b6",
+          "#4c1d95"
         ];
 
-        const borderColors = [
-          "#00f5ff", // ciano neon brillante
-          "#ff0055", // rosso critico intenso
-          "#ff6600", // arancione alert
-          "#ffaa00", // ambra warning
-          "#0066ff", // blu elettrico
-          "#5555ff", // blu violaceo tech
-          "#9945ff", // viola neon
-          "#00ff88", // verde matrix
-        ];
+        const borderColor = ["#324158"];
 
         setChartData({
           labels: labels,
@@ -70,7 +60,7 @@ const PopularThreats = () => {
             {
               data: data,
               backgroundColor: backgroundColors,
-              borderColor: borderColors,
+              borderColor: borderColor,
               borderWidth: 2,
             },
           ],
@@ -111,7 +101,7 @@ const PopularThreats = () => {
         plugins: {
           legend: {
             display: true,
-            position: "bottom",
+            position: "right",
             labels: {
               color: "#94a3b8",
               padding: 15,
