@@ -29,38 +29,39 @@ const PopularThreats = () => {
         const threats = response.data.data || [];
 
         const top5Threats = threats.slice(7, 15);
-        
 
         const labels = top5Threats.map((threat) => {
-          return threat
-            .replace(/_/g, ' ')
-            .replace(/\b\w/g, l => l.toUpperCase()) || "Unknown";
+          return (
+            threat
+              .replace(/_/g, " ")
+              .replace(/\b\w/g, (l) => l.toUpperCase()) || "Unknown"
+          );
         });
 
         const data = top5Threats.map((threat, index) => {
-          return 100 - (index * 15);
+          return 100 - index * 15;
         });
 
         const backgroundColors = [
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(255, 159, 64, 1)",
-          "rgba(199, 199, 199, 1)",
-          "rgba(83, 102, 255, 1)",
+          "#00f5ff", // ciano neon brillante
+          "#ff0055", // rosso critico intenso
+          "#ff6600", // arancione alert
+          "#ffaa00", // ambra warning
+          "#0066ff", // blu elettrico
+          "#5555ff", // blu violaceo tech
+          "#9945ff", // viola neon
+          "#00ff88", // verde matrix
         ];
 
         const borderColors = [
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(255, 159, 64, 1)",
-          "rgba(199, 199, 199, 1)",
-          "rgba(83, 102, 255, 1)",
+          "#00f5ff", // ciano neon brillante
+          "#ff0055", // rosso critico intenso
+          "#ff6600", // arancione alert
+          "#ffaa00", // ambra warning
+          "#0066ff", // blu elettrico
+          "#5555ff", // blu violaceo tech
+          "#9945ff", // viola neon
+          "#00ff88", // verde matrix
         ];
 
         setChartData({
@@ -110,14 +111,14 @@ const PopularThreats = () => {
         plugins: {
           legend: {
             display: true,
-            position: 'bottom',
+            position: "bottom",
             labels: {
-              color: '#94a3b8',
+              color: "#94a3b8",
               padding: 15,
               font: {
-                size: 12
-              }
-            }
+                size: 12,
+              },
+            },
           },
           title: {
             display: true,
@@ -125,29 +126,29 @@ const PopularThreats = () => {
             color: "#94a3b8",
             font: {
               size: 20,
-              weight: 'bold'
+              weight: "bold",
             },
             padding: {
-              bottom: 20
-            }
+              bottom: 20,
+            },
           },
           tooltip: {
             callbacks: {
-              label: function(context) {
-                let label = context.label || '';
+              label: function (context) {
+                let label = context.label || "";
                 if (label) {
-                  label += ': ';
+                  label += ": ";
                 }
-                label += context.parsed + ' (Score)';
+                label += context.parsed + " (Score)";
                 return label;
-              }
-            }
-          }
+              },
+            },
+          },
         },
         animation: {
           duration: 1000,
-          easing: 'easeInOutQuart'
-        }
+          easing: "easeInOutQuart",
+        },
       },
     });
 
