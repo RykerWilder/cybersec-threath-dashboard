@@ -4,8 +4,6 @@ import { ReactSortable } from "react-sortablejs";
 import Header from './components/Header';
 import PopularThreats from './components/PopularThreats';
 import NVDVulnerabilitySeverity from './components/NVDVulnerabilitySeverity';
-import Threats from './components/Threats';
-import Trends from './components/Trends';
 import Footer from './components/Footer';
 import TopVulnerabilitiesList from './components/TopVulnerabilitiesList';
 
@@ -13,9 +11,7 @@ function App() {
   const [items, setItems] = useState([
     { id: 1, component: 'PopularThreats' },
     { id: 2, component: 'NVDVulnerabilitySeverity' },
-    { id: 3, component: 'threats' },
-    { id: 4, component: 'TopVulnerabilitiesList'},
-    { id: 5, component: 'trends' }
+    { id: 3, component: 'TopVulnerabilitiesList'}
   ]);
 
   const renderComponent = (item) => {
@@ -26,10 +22,6 @@ function App() {
         return <NVDVulnerabilitySeverity />;
       case 'TopVulnerabilitiesList':
         return <TopVulnerabilitiesList/>
-      case 'threats':
-        return <Threats />;
-      case 'trends':
-        return <Trends />;
       default:
         return null;
     }
