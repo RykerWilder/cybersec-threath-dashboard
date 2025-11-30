@@ -10,9 +10,9 @@ function App() {
   return (
     <div className="bg-slate-800 min-h-screen">
       <Header />
-      <div className="px-10 max-w-[1500px] w-full mx-auto">
+      <div className="px-10 max-w-[1500px] mx-auto">
         <div className="flex flex-col gap-5">
-          <div className="flex gap-5 w-full">
+          <div className="grid grid-cols-2 gap-5 w-full">
             <PopularThreats />
             <NVDVulnerabilitySeverity />
           </div>
