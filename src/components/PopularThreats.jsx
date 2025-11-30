@@ -169,8 +169,8 @@ const PopularThreats = () => {
   }
 
   return (
-    <div className="break-inside-avoid border border-stone-500 rounded-lg p-4 bg-slate-700">
-      <div className="relative h-100">
+    <div className="break-inside-avoid border border-stone-500 rounded-lg p-4 bg-slate-700" style={{ width: "calc(50% / 2 - 20px)" }}>
+      <div className="h-100">
         <canvas ref={chartRef}></canvas>
       </div>
     </div>
