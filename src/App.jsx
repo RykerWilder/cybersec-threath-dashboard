@@ -5,6 +5,7 @@ import PopularThreats from './components/PopularThreats';
 import NVDVulnerabilitySeverity from './components/NVDVulnerabilitySeverity';
 import TopVulnerabilitiesList from './components/TopVulnerabilitiesList';
 import CyberThreatMap from './components/ThreatMap';
+import AttacksTrend from './components/AttacksTrends';
 
 function App() {
   return (
@@ -17,9 +18,10 @@ function App() {
             <NVDVulnerabilitySeverity />
           </div>
           <div>
-            <CyberThreatMap />
+            {/* <CyberThreatMap /> */}
           </div>
           <TopVulnerabilitiesList />
+          <AttacksTrend />
         </div>
       </div>
       <Footer />
