@@ -22,24 +22,39 @@ const AttacksTrend = () => {
         
         const data = await response.json();
         console.log("Response data:", data);
+        console.log("Type of data:", typeof data);
+        console.log("Is array:", Array.isArray(data));
 
-        const dailyData = data.dailysummary || [];
+        let dailyData = [];
+        if (Array.isArray(data)) {
+          dailyData = data;
+        } else if (data.dailysummary && Array.isArray(data.dailysummary)) {
+          dailyData = data.dailysummary;
+        }
         
+        console.log("Daily data length:", dailyData.length);
+        console.log("First item:", dailyData[0]);
+
         const sortedData = dailyData.sort((a, b) => 
           new Date(a.date) - new Date(b.date)
         );
 
         const labels = sortedData.map(item => item.date);
-        const packetsData = sortedData.map(item => parseInt(item.packets) || 0);
+        const recordsData = sortedData.map(item => parseInt(item.records) || 0);
         const targetsData = sortedData.map(item => parseInt(item.targets) || 0);
         const sourcesData = sortedData.map(item => parseInt(item.sources) || 0);
+        
+        console.log("Labels:", labels);
+        console.log("Records data:", recordsData);
+        console.log("Targets data:", targetsData);
+        console.log("Sources data:", sourcesData);
 
         setChartData({
           labels: labels,
           datasets: [
             {
-              label: "Packets",
-              data: packetsData,
+              label: "Records",
+              data: recordsData,
               borderColor: "#3b82f6",
               backgroundColor: "rgba(59, 130, 246, 0.1)",
               borderWidth: 2,
