@@ -205,15 +205,15 @@ const AttacksTrend = () => {
             position: 'right',
             min: 0,
             ticks: {
-              color: "#94a3b8",
+              color: "#24c15e",
             },
             grid: {
               drawOnChartArea: false,
             },
             title: {
               display: true,
-              text: 'Targets / Attackers',
-              color: '#94a3b8',
+              text: 'Attackers',
+              color: '#24c15e',
               font: {
                 size: 12,
                 weight: 'bold'
