@@ -19,8 +19,6 @@ const ThreatMap = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const ABUSEIPDB_API_KEY = import.meta.env.VITE_ABUSEIPDB_API_KEY;
-
   const fetchThreatData = async () => {
     try {
       const response = await fetch('https://threatfeeds.io/api/v1/latest');
