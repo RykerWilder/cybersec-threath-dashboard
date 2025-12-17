@@ -9,19 +9,17 @@ const PopularThreats = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const VIRUSTOTAL_API_KEY = import.meta.env.VITE_VIRUSTOTAL_API_KEY;
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
 
         const response = await axios.get(
-          "https://www.virustotal.com/api/v3/popular_threat_categories",
+          "https://www.",
           {
             headers: {
               accept: "application/json",
-              "x-apikey": VIRUSTOTAL_API_KEY,
+              "x-apikey": "",
             },
           }
         );
